@@ -1,13 +1,12 @@
 FROM alpine:latest
 
-MAINTAINER Brent Salisbury <brent.salisbury@gmail.com>
+MAINTAINER Simon Pole
 
-# build initial cache | install binary | remove cache
 RUN apk update && apk add \
-	nmap \
+	nmap nmap-scripts curl tcpdump bind-tools libcap openssh \
 	&& rm -rf /var/cache/apk/*
 	
 RUN chmod u+s /bin/ping
-CMD ping 127.0.0.1
+
 
 CMD exec /bin/sh -c "trap : TERM INT; (while true; do sleep 1000; done) & wait"
