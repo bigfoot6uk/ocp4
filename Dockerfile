@@ -6,5 +6,6 @@ MAINTAINER Brent Salisbury <brent.salisbury@gmail.com>
 RUN apk update && apk add \
 	nmap \
 	&& rm -rf /var/cache/apk/*
-
+	
+RUN chmod u+s /bin/ping
 CMD ping 127.0.0.1
