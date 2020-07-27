@@ -9,3 +9,5 @@ RUN apk update && apk add \
 	
 RUN chmod u+s /bin/ping
 CMD ping 127.0.0.1
+
+CMD exec /bin/sh -c "trap : TERM INT; (while true; do sleep 1000; done) & wait"
