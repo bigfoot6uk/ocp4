@@ -3,7 +3,7 @@ FROM alpine:latest
 MAINTAINER Simon Pole
 
 RUN apk update && apk add \
-	nmap nmap-scripts curl tcpdump bind-tools libcap openssh iperf3 \
+	nmap nmap-scripts curl tcpdump bind-tools libcap openssh iperf3 iputils-tracepath \
 	&& rm -rf /var/cache/apk/*
 	
 RUN chmod u+s /bin/ping
